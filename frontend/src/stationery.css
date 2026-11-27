@@ -1,0 +1,269 @@
+/* Stationery page: phone-first layout. Loaded by pages/Stationery.js */
+
+.st-page { padding-bottom: 8rem; }
+@media (min-width: 768px) { .st-page { padding-bottom: 1rem; } }
+
+/* ---------- quick date buttons ---------- */
+.st-chips {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding: 0.1rem 0 0.6rem;
+  -webkit-overflow-scrolling: touch;
+}
+.st-chip {
+  flex: 0 0 auto;
+  border: 1px solid #cfd8e8;
+  background: #fff;
+  color: #334155;
+  border-radius: 2rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+}
+.st-chip.active {
+  background: var(--cr-blue);
+  border-color: var(--cr-blue);
+  color: #fff;
+}
+
+/* ---------- tabs: top pills on PC, bottom bar on phones ---------- */
+@media (max-width: 767.98px) {
+  .st-page .st-tabs.nav { display: none; }
+}
+
+.st-bottomnav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1030;
+  display: flex;
+  background: #fff;
+  border-top: 1px solid #dfe5f1;
+  box-shadow: 0 -2px 10px rgba(15, 23, 42, 0.08);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.st-bottomnav button {
+  position: relative;
+  flex: 1;
+  min-height: 54px;
+  border: 0;
+  background: transparent;
+  padding: 0.5rem 0.2rem;
+  font-size: 0.78rem;
+  color: #64748b;
+}
+.st-bottomnav button.active {
+  color: var(--cr-blue);
+  font-weight: 700;
+  box-shadow: inset 0 3px 0 var(--cr-blue);
+}
+.st-navbadge {
+  display: inline-block;
+  min-width: 1.15rem;
+  margin-left: 0.2rem;
+  padding: 0 0.3rem;
+  border-radius: 1rem;
+  background: #dc3545;
+  color: #fff;
+  font-size: 0.68rem;
+  line-height: 1.15rem;
+}
+
+/* ---------- floating add button ---------- */
+.st-fab {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(70px + env(safe-area-inset-bottom));
+  z-index: 1035;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--cr-teal);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  box-shadow: 0 6px 16px rgba(11, 36, 71, 0.3);
+}
+.st-fab-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 1034;
+  background: rgba(15, 23, 42, 0.25);
+}
+.st-fab-menu {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(136px + env(safe-area-inset-bottom));
+  z-index: 1035;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.st-fab-menu button {
+  border: 0;
+  border-radius: 2rem;
+  background: #fff;
+  color: var(--cr-navy);
+  font-weight: 600;
+  padding: 0.7rem 1.2rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+}
+
+/* ---------- phone layout ---------- */
+@media (max-width: 767.98px) {
+  .st-page .cr-page-head {
+    padding: 1rem 1.1rem;
+    border-radius: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .st-page .cr-page-head h1 { font-size: 1.3rem; }
+
+  .st-page .cr-stat .h4 { font-size: 1.05rem; }
+  .st-page .cr-stat .card-body { padding: 0.7rem 0.8rem !important; }
+
+  .st-page .cr-panel {
+    background: transparent;
+    box-shadow: none;
+  }
+  .st-page .cr-panel .card-header { padding-left: 0; padding-right: 0; }
+
+  .st-page .btn { min-height: 44px; }
+}
+
+/* ---------- cards (phones) ---------- */
+.st-cards { display: grid; gap: 0.65rem; }
+.st-subhead { font-weight: 600; color: #334155; margin: 0.25rem 0 0.5rem; }
+.st-card {
+  background: #fff;
+  border: 1px solid #e3e9f3;
+  border-radius: 0.9rem;
+  padding: 0.8rem 0.9rem;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+}
+.st-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.st-card-title { font-weight: 600; font-size: 1rem; line-height: 1.25; }
+.st-card-amount { font-weight: 700; font-size: 1.1rem; white-space: nowrap; }
+.st-card-meta { color: #64748b; font-size: 0.82rem; margin-top: 0.15rem; }
+.st-card-debt {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 2rem;
+  background: #fdecee;
+  color: #b42318;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.st-more {
+  display: block;
+  margin: 0.5rem 0 0 auto;
+  border: 0;
+  background: transparent;
+  color: var(--cr-blue);
+  font-size: 0.85rem;
+  padding: 0.2rem 0;
+}
+.st-card-more {
+  margin-top: 0.4rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed #d8dfec;
+  font-size: 0.88rem;
+}
+.st-card-more > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.1rem 0;
+}
+.st-card-more span { color: #64748b; }
+.st-split {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+}
+.st-split span { display: block; color: #64748b; }
+.st-empty { text-align: center; color: #64748b; padding: 1.5rem 0; }
+
+/* ---------- item tiles in the sale form ---------- */
+.st-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+@media (min-width: 576px) {
+  .st-tiles { grid-template-columns: repeat(3, 1fr); }
+}
+.st-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  min-height: 58px;
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  background: #fff;
+  border: 1.5px solid #d6deec;
+  border-radius: 0.8rem;
+  color: #1e293b;
+}
+.st-tile.active {
+  border-color: var(--cr-blue);
+  background: #eaf0fb;
+  box-shadow: 0 0 0 2px rgba(25, 55, 109, 0.15);
+}
+.st-tile-name { font-weight: 600; font-size: 0.95rem; line-height: 1.2; }
+.st-tile-rate { font-size: 0.8rem; color: #64748b; }
+
+/* ---------- qty stepper and amount ---------- */
+.st-stepper { display: flex; gap: 0.4rem; }
+.st-stepper .btn { flex: 0 0 48px; font-size: 1.3rem; line-height: 1; }
+.st-stepper .form-control { text-align: center; }
+.st-stepper input::-webkit-outer-spin-button,
+.st-stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.st-stepper input[type='number'] { -moz-appearance: textfield; }
+.st-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 0.9rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.8rem;
+  background: #eef2f9;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.st-amount span { font-size: 0.9rem; font-weight: 500; color: #475569; }
+
+/* ---------- forms (the popups render outside the page, so they use .st-modal) ---------- */
+@media (max-width: 575.98px) {
+  .st-modal .form-control,
+  .st-modal .form-select { min-height: 46px; font-size: 16px; }
+  .st-modal .modal-footer .btn { flex: 1 1 0; min-height: 48px; }
+}
+.st-modal .modal-footer { gap: 0.5rem; }
+
+/* ---------- items and rates (admin) ---------- */
+.st-item-list { padding: 0 1rem 1rem; display: grid; gap: 0.6rem; }
+.st-item-edit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #e3e9f3;
+  border-radius: 0.8rem;
+  background: #fff;
+}
+.st-item-edit.off { opacity: 0.65; }
+.st-item-name { flex: 1 1 180px; }
+.st-item-rate { flex: 0 0 130px; }
+.st-item-save { margin-left: auto; }
